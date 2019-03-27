@@ -10,8 +10,9 @@ class LineItem < ApplicationRecord
 
 
   def self.populate params
+    line_items = []
     params.each do |item|
-      line_item = LineItem.new(
+      line_items << LineItem.new(
           shopify_id: item[:id],
           title: item[:title],
           quantity: item[:quantity],
@@ -22,6 +23,7 @@ class LineItem < ApplicationRecord
           total_discount: item[:total_discount]
       )
     end
+    return line_items
   end
 
 end
