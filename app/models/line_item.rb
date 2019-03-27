@@ -1,7 +1,7 @@
 class LineItem < ApplicationRecord
 
   ## Validations ##
-  validates :shopify_id, :title, :quantity, :price, presence: true
+  # validates :shopify_id, :title, :quantity, :price, presence: true
 
   ## Associations ##
   belongs_to :order
