@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  skip_before_filter :verify_authenticity_token, :only => [:order_creation_webhook]
+
   def index
     @orders = Order.all
     @chart_data = Order.chart_data
