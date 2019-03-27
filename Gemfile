@@ -64,3 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rest-client'
 gem "twitter-bootstrap-rails"
 
+gem 'chartkick'
+gem 'highcharts-rails'
+
