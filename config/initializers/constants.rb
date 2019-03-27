@@ -1,0 +1,1 @@
+ShopifyBaseUrl = "https://#{Rails.application.secrets.shopify_key}:#{Rails.application.secrets.shopify_secret}@#{Rails.application.secrets.shopify_app}.myshopify.com/admin/"

@@ -1,0 +1,36 @@
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:shopify_id) %></th>
+      <th><%= model_class.human_attribute_name(:order_number) %></th>
+      <th><%= model_class.human_attribute_name(:gateway) %></th>
+      <th><%= model_class.human_attribute_name(:sub_total_price) %></th>
+      <th><%= model_class.human_attribute_name(:total_tax) %></th>
+      <th><%= model_class.human_attribute_name(:total_price) %></th>
+      <th><%= model_class.human_attribute_name(:currency) %></th>
+      <th><%= model_class.human_attribute_name(:app_id) %></th>
+      <th><%= model_class.human_attribute_name(:shopify_created_at) %></th>
+      <th><%= model_class.human_attribute_name(:shopify_updated_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.shopify_id %></td>
+        <td><%= order.order_number %></td>
+        <td><%= order.gateway %></td>
+        <td><%= order.sub_total_price %></td>
+        <td><%= order.total_tax %></td>
+        <td><%= order.total_price %></td>
+        <td><%= order.currency %></td>
+        <td><%= order.app_id %></td>
+        <td><%= order.shopify_created_at %></td>
+        <td><%= order.shopify_updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
