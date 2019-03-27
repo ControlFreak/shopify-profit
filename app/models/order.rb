@@ -5,6 +5,7 @@ class Order < ApplicationRecord
 
   ## Associations ##
   has_many :line_items
+  accepts_nested_attributes_for :line_items
 
 
   def self.chart_data
