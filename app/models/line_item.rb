@@ -6,7 +6,7 @@ class LineItem < ApplicationRecord
   ## Associations ##
   belongs_to :order
   belongs_to :product
-  belongs_to :variant
+  # belongs_to :variant
 
 
   def self.populate params
@@ -19,7 +19,7 @@ class LineItem < ApplicationRecord
           price: item[:price],
           vendor: item[:vendor],
           product_id: Product.find_by(shopify_id: item["product_id"]).id,
-          variant_id: item[:variant_id],
+          # variant_id: item[:variant_id],
           total_discount: item[:total_discount]
       )
     end
