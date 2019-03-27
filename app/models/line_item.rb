@@ -12,7 +12,7 @@ class LineItem < ApplicationRecord
   def self.populate params
     params.each do |item|
       line_item = LineItem.new(
-          shopify_id: params[:id],
+          shopify_id: item[:id],
           title: item[:title],
           quantity: item[:quantity],
           price: item[:price],
