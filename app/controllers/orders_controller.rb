@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-  skip_before_filter :verify_authenticity_token, :only => [:order_creation_webhook]
+  skip_before_action :verify_authenticity_token, :only => [:order_creation_webhook]
 
   def index
     @orders = Order.all
