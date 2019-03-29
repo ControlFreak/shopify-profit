@@ -9,9 +9,7 @@ class Order < ApplicationRecord
 
 
   def self.chart_data
-    profit = 0
-    
-    all.collect{|order| [order.shopify_created_at, profit += (order.total_price - order.total_price/5 - order.total_price * 2 / 5).to_f ] }
+    all.collect{|order| [order.shopify_created_at, (order.total_price - order.total_price/5 - order.total_price * 2 / 5).to_f ] }
   end
 
 end
